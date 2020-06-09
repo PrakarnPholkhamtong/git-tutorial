@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Vue.js</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="vue-app">
+        <!--text-->
+        Name:<input type="text" v-model="name">
+        <!--checkbox-->
+ food fav:
+        <input type="checkbox" value="somtam" v-model="foods">
+        <label >somtam</label>
+        <input type="checkbox" value="pizza"v-model="foods">
+        <label >pizza</label>
+        <input type="checkbox" value="mama"v-model="foods">
+        <label >mama</label>
+       
+        <br>
+       <!--radio box-->
+       Gender:
+        <input type="radio" value="Male" v-model="gender"> 
+        <label>Male</label>
+        <input type="radio" value="FeMale" v-model="gender"> 
+        <label>Female</label>
+        
+      
+      <br>
+      <!--select-->
+      อาชีพ :
+      <select v-model="job">
+          <option disabled value="" value="">Chose your job: </option>
+          <option>Programer</option>
+          <option>Student</option>
+          <option>Monk</option>
+          <option>Other</option>
+             
+      </select>
+      <input type="text" v-model="Other">
+      <hr>
+      <h1>Name : {{name}}</h1> 
+      <h1>Job : {{job}} {{Other}}</h1> 
+      <h1>Age : {{age}}</h1> 
+        <h1>foods{{foods}}</h1>
+        <h1>gender:{{gender}}</h1>
+        <!--link-->
+        <h1>Website : <a v-bind:href="website">Youtube</a> </h1>
+/       <!--if -->
+        <button type="button" v-on:click="like=!like">like </button>
+        <h1 v-if="like">Hello</h1>
+        <br>
+        
+        <!--loop-->
+        <ul>
+            <li v-for="result in product">{{result}}</li>
+        </ul>
+   
+        <ul>
+            <li v-for="emp in employee">{{emp.name}} | {{emp.age}}</li>
+        </ul>
+
+</div>
+    <script src="app.js" charset="utf-8"></script>
+</body>
+
+</html>
